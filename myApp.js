@@ -1,8 +1,14 @@
 require('dotenv').config();
 var mongoose = require('mongoose');
 
+const { Schema } = mongoose;
+const personSchema = new Schema({
+  name : { type : String, required : true },
+  age : Number,
+  favoriteFoods : []
+});
 
-let Person;
+let Person = mongoose.model('Person', personSchema);
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
