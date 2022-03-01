@@ -9,7 +9,7 @@ const personSchema = new Schema({
 });
 
 let Person = mongoose.model('Person', personSchema);
-
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
 };
