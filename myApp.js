@@ -17,7 +17,7 @@ var arrayOfPeople = [
   {name: "Kayleen Custodio", age: 10, favoriteFoods:["Pasta"]}
 ];
 
-var personName = "Franklin";
+var personName = {name: "Franklin"};
 
 const createAndSavePerson = (done) => {
   person = new Person({
