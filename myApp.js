@@ -17,6 +17,8 @@ var arrayOfPeople = [
   {name: "Kayleen Custodio", age: 10, favoriteFoods:["Pasta"]}
 ];
 
+var personName = "Franklin";
+
 const createAndSavePerson = (done) => {
   person = new Person({
     name: "Franklin Custodio",
@@ -37,7 +39,10 @@ const createManyPeople = (arrayOfPeople, done) => {
 };
 
 const findPeopleByName = (personName, done) => {
-  done(null /*, data*/);
+  Person.find(personName, (err, person) => {
+    if (err) return console.error(err);
+    done(null, person);
+  });
 };
 
 const findOneByFood = (food, done) => {
